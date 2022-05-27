@@ -23,8 +23,18 @@ public class RedSquare {
 		// operator. 
 		if(isRed && isSquare) {
 			drawRedSquare();
+		}else if(!isRed && isSquare){
+			drawBlueSquare();
+		}else if(isRed && !isSquare){
+			drawRedTriangle();
+		}else if(!isRed && !isSquare){
+			drawBlueTriangle();
 		}
-		else {
+		if(drewRedSquare || drewBlueSquare){
+			JOptionPane.showMessageDialog(null, "You drew a square!");
+		}else if(drewRedTriangle || drewBlueTriangle){ 
+			JOptionPane.showMessageDialog(null, "You drew a triangle!");
+		}else{
             JOptionPane.showMessageDialog(null, "No shape was drawn!");
         }
 		
